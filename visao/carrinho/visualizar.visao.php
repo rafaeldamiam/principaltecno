@@ -10,7 +10,6 @@
             <td>Adicionar/Remover</td>
             <td>Excluir</td>
         </tr>
-        <form action="<?= @$acao ?>" method="POST">
             <?php $soma= 0;$i = 0; foreach ($produtos as $produto): ?>
                 <tr>
                     <td><a href="./produto/visualizar/<?=$produto['IdProduto']?>" class="btn btn-secondary"><?= $produto["NomeProduto"] ?></a></td>

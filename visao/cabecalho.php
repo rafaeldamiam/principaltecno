@@ -11,7 +11,8 @@
         ?>
         <?php
         if (isset($_SESSION["auth"])) {
-            echo "<a href='./pedido/'>Pedidos</a>";
+            $id = $_SESSION["idLogado"];
+            echo "<a href='./pedido/index/$id'>Pedidos</a>";
         } else {
             echo "<a href='./login'>Pedidos</a>";
         }

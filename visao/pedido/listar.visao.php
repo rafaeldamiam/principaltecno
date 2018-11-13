@@ -1,21 +1,29 @@
-<h2>Pedidos</h2>
-<br><br>
 <center>
-    <?php foreach ($pedidos as $pedido): ?>
-
-        <div id="pedido">
-            <h3><?=$pedido['IdProduto']?></h3>
-            <img id="imgProd1" src="<?=$produto['Imagem']?>">
-            <h3>R$ <?=$produto['Preco']?></h3><br><br>
-            <a href="./produto/visualizar/<?=$produto['IdProduto']?>" class="btn btn-secondary">Descrever</a>
-            <?php if(adminEstaLogado()): ?>
-                <a href="./produto/editar/<?=$produto['IdProduto']?>" class="btn btn-info">Editar</a>
-                <a href="./produto/deletar/<?=$produto['IdProduto']?>" class="btn btn-danger">Deletar</a>
-            <?php endif; ?>
-            <br><br><br>
-        </div>
-
-    <?php endforeach; ?>
-
-    <br>
+    <h2>Carrinho</h2>
+    <br><br>
+    <table border="1">
+        <tr>
+            <td>Nome Produto</td>
+            <td>Preço Unidade</td>
+            <td>Quantidade</td>
+            <td>Valor Produtos</td>
+            <td>Adicionar/Remover</td>
+            <td>Excluir</td>
+        </tr>
+            <?php foreach ($produtos as $produto): ?>
+                <tr>
+                    <td><a href="./produto/visualizar/<?=$produto['IdProduto']?>" class="btn btn-secondary"><?= $produto["NomeProduto"] ?></a></td>
+                    <td></td>
+                    <td></td>
+                    <td><?=calPreco($preco,$quanti)?></td>
+                    <td><a href="./carrinho/sumOne/<?= $produto['IdProduto'] ?>">+  </a><a href="./carrinho/minOne/<?= $produto['IdProduto'] ?>">   -</a></td>
+                    <td><a href="./carrinho/excluir/<?= $produto['IdProduto'] ?>">Excluir</a></td>
+                </tr>
+            <?php endforeach; ?>
+    </table>
+    <br><br> 
+        <a>Valor Total: <?=$soma?></a>
+    <br><br><br>   
+<a href="./carrinho/excluirTudo">Limpar Carrinho</a>
+<a href="./">Comprar</a>    
 </center>
