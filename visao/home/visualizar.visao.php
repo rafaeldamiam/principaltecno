@@ -19,35 +19,19 @@
             <div class="carousel-inner" role="listbox">
 
                 <div class="item active">
-                    <img src="./bibliotecas/imagens/img0.jpg" alt="Dell Gaming I15" width="460" height="345">
-                    <div class="carousel-caption">
-                        <h3>Dell Gaming I15</h3>
-                        <p>Aproveite! O inovador notebook gamer da Dell</p>
-                    </div>
+                    <img src="./bibliotecas/imagens/slide1.jpg" alt="Dell Gaming I15" width="460" height="345">
                 </div>
 
                 <div class="item">
-                    <img src="./bibliotecas/imagens/img1.jpg" alt="Iphone X" width="460" height="345">
-                    <div class="carousel-caption">
-                        <h3>Iphone X</h3>
-                        <p>O celular mais desejado em todo o mundo. (e um dos mais caros também)</p>
-                    </div>
+                    <img src="./bibliotecas/imagens/slide2.jpg" alt="Iphone X" width="460" height="345">
                 </div>
 
                 <div class="item">
-                    <img src="./bibliotecas/imagens/img2.jpg" alt="A8" width="460" height="345">
-                    <div class="carousel-caption">
-                        <h3>Galaxy A8</h3>
-                        <p>Um ótimo celular para quem ganha apenas um salário mínimo</p>
-                    </div>
+                    <img src="./bibliotecas/imagens/slide3.jpg" alt="A8" width="460" height="345">
                 </div>
 
                 <div class="item">
-                    <img src="./bibliotecas/imagens/img3.jpg" alt="Samsung Smart TV 4K" width="460" height="345">
-                    <div class="carousel-caption">
-                        <h3>Samsung Smart TV 4K</h3>
-                        <p>Você nem precisará sair de casa para ir ao cinema. Garanta já o cinema em sua humilde residência!</p>
-                    </div>
+                    <img src="./bibliotecas/imagens/slide4.jpg" alt="Samsung Smart TV 4K" width="460" height="345">
                 </div>
 
             </div>

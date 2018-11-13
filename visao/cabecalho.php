@@ -5,13 +5,13 @@
         <?php
         if (isset($_SESSION["auth"])) {
             if ($_SESSION["auth"]["role"] == "Admin") {
-                echo"<li><a href='./usuario'>Listar Usuários</a></li>";
+                echo"<li><a href='./admin'>Administração</a></li>";
             }
         }
         ?>
         <?php
         if (isset($_SESSION["auth"])) {
-            echo "<a href='./pedido/pedidos'>Pedidos</a>";
+            echo "<a href='./pedido/'>Pedidos</a>";
         } else {
             echo "<a href='./login'>Pedidos</a>";
         }
@@ -23,7 +23,6 @@
             echo "<a href='./login'>Login</a>";
         }
         ?>
-
 
     </form>
     <br><br>

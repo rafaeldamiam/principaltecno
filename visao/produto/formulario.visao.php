@@ -5,11 +5,16 @@
 
 	<label>Descrição:</label>
 	<input type="text" id="caixaTexto" name="descricao" value="<?=@$produto['Descricao']?>">
+	
+	<br><br><br><br>
 
 	<label>Unidades:</label>
 	<input type="text" id="caixaTexto" name="unidades" value="<?=@$produto['Unidades']?>">
 
-	<br><br>
+	<label>Categoria:</label>
+	<input type="text" id="caixaTexto" name="Categoria" value="<?=@$produto['Categoria']?>">
+
+	<br><br><br><br>
 
 	<label for="imagem">Imagem:</label> 
 	<input type="text" id="caixaTexto" name="imagem" value="<?=@$produto['Imagem']?>">
