@@ -27,16 +27,16 @@ function pegar10Produtos() {
     return $produtos;
 }
 
-function adicionarProduto($nome, $descricao, $unidades, $preco, $imagem ) {
-    $sql = "INSERT INTO produto (NomeProduto, Descricao, Unidades, Preco, Imagem) 
-    VALUES ('$nome', '$descricao', '$unidades', '$preco', '$imagem')";
+function adicionarProduto($nome, $descricao, $categoria, $unidades, $preco, $imagem ) {
+    $sql = "INSERT INTO produto (NomeProduto, Descricao, Categoria, Unidades, Preco, Imagem) 
+    VALUES ('$nome', '$descricao', '$categoria', '$unidades', '$preco', '$imagem')";
     $resultado = mysqli_query($cnx = conn(), $sql);
     if(!$resultado) { die('Erro ao cadastrar produto' . mysqli_error($cnx)); }
     return 'Produto cadastrado com sucesso!';
 }
 
-function editarProduto($id, $nome, $descricao, $unidades, $preco, $imagem) {
-    $sql = "UPDATE produto SET NomeProduto = '$nome', Descricao = '$descricao', Unidades = '$unidades', Preco = '$preco', Imagem = '$imagem'  WHERE IdProduto = $id";
+function editarProduto($id, $nome, $descricao, $categoria, $unidades, $preco, $imagem) {
+    $sql = "UPDATE produto SET NomeProduto = '$nome', Descricao = '$descricao', Categoria = '$categoria', Unidades = '$unidades', Preco = '$preco', Imagem = '$imagem'  WHERE IdProduto = $id";
     $resultado = mysqli_query($cnx = conn(), $sql);
     if(!$resultado) { die('Erro ao alterar produto' . mysqli_error($cnx)); }
     return 'Produto alterado com sucesso!';
@@ -69,4 +69,25 @@ function pegarQuantProdutoPorId($id){
     $produto = mysqli_fetch_array($resultado);
     return $produto;
 }
+
+function pegarQuantDosProdutos(){
+    $sql = "SELECT Unidades, NomeProduto FROM produto";
+    $resultado = mysqli_query(conn(), $sql);
+    $produtos = array();
+    while ($linha = mysqli_fetch_array($resultado)) {
+        $produtos[] = $linha;
+    }
+    return $produtos;
+}
+
+function pegarProdPorCategoria(){
+    $sql = "SELECT Nome, Preco FROM produto WHERE Categoria = 'celular'";
+    $resultado = mysqli_query(conn(), $sql);
+    $produtos = array();
+    while ($linha = mysqli_fetch_array($resultado)) {
+        $produtos[] = $linha;
+    }
+    return $produtos;
+}
+
 ?>

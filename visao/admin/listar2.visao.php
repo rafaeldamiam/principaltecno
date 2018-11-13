@@ -1,18 +1,18 @@
 <h2>Relatórios</h2>
-<h3>Quantidade de produtos no estoque</h3>
+<h3>Produtos em cada categoria</h3>
 <br><br>
 <center>
     <table class="table">
         <thead>
             <tr>
                 <th>Nome</th>
-                <th>Quantidade</th>
+                <th>Preço</th>
             </tr>
         </thead>
         <?php foreach ($produtos as $produto): ?>
             <tr>
                 <td><?=$produto['NomeProduto']?></td>
-                <td><?=$produto['Unidades']?></td>
+                <td><?=$produto['Preco']?></td>
             </tr>
         <?php endforeach; ?>
     </table>
