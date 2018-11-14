@@ -1,16 +1,22 @@
 <?php
 require_once "modelo/pedidoModelo.php";
+require_once "modelo/produtoModelo.php";
 
 /** Admin */
 function index($id) {
-	$dados["pedidos"] = pegarPedidoPorId($id);
-    if (!empty($dados["pedidos"])) {
+	$dados["pedidos"] = pegarPedidosPorId($id);
+	
+	if(!empty($dados["pedidos"])){
     	exibir("pedido/listar", $dados);
-    }else{
+	}else{
     	exibir("pedido/vazio");
     }
 }
 
+function buscarProd($id){
+	$busca = pegarNomeProdutoPorId($id);
+	return $busca["NomeProduto"];
+}
 
 function salvaPedido($id,$quanti){
     

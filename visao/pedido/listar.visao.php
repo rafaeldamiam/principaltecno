@@ -1,29 +1,28 @@
 <center>
-    <h2>Carrinho</h2>
+    <h2>Compras Antigas</h2>
     <br><br>
     <table border="1">
         <tr>
-            <td>Nome Produto</td>
-            <td>Preço Unidade</td>
+            <td>Produto</td>
             <td>Quantidade</td>
-            <td>Valor Produtos</td>
-            <td>Adicionar/Remover</td>
-            <td>Excluir</td>
+            <td>Preço</td>
+            <td>Data de Pedido</td>
+            <td>Data de Entrega</td>
         </tr>
-            <?php foreach ($produtos as $produto): ?>
+            <?php foreach ($pedidos as $pedido): ?>
                 <tr>
-                    <td><a href="./produto/visualizar/<?=$produto['IdProduto']?>" class="btn btn-secondary"><?= $produto["NomeProduto"] ?></a></td>
-                    <td></td>
-                    <td></td>
-                    <td><?=calPreco($preco,$quanti)?></td>
-                    <td><a href="./carrinho/sumOne/<?= $produto['IdProduto'] ?>">+  </a><a href="./carrinho/minOne/<?= $produto['IdProduto'] ?>">   -</a></td>
-                    <td><a href="./carrinho/excluir/<?= $produto['IdProduto'] ?>">Excluir</a></td>
+                    <?php
+                        $nome = buscarProd($pedido["IdProduto"]);
+                    ?>
+                    <td><a href="./produto/visualizar/<?=$pedido['IdProduto']?>" class="btn btn-secondary"><?= $nome ?></a></td>
+                    <td><?=$pedido['Quantidade']?></td>
+                    <td><?=$pedido['VlrTotal']?></td>
+                    <td><?=$pedido['Dtpedido']?></td>
+                    <td><?=$pedido['Dtentrega']?></td>
                 </tr>
             <?php endforeach; ?>
-    </table>
-    <br><br> 
-        <a>Valor Total: <?=$soma?></a>
-    <br><br><br>   
+    </table>   
+<br><br>
 <a href="./carrinho/excluirTudo">Limpar Carrinho</a>
 <a href="./">Comprar</a>    
 </center>

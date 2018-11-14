@@ -10,13 +10,16 @@ function pegarTodosPedidos(){
     return $pedidos;
 }
 
-function pegarPedidoPorId($id) {
-    $sql = "SELECT * FROM Pedido WHERE IdPedido = '$id';";
+function pegarPedidosPorId($id){
+    $sql = "SELECT * FROM Pedido WHERE IdUsuario = '$id'";
     $resultado = mysqli_query(conn(), $sql);
-    $pedidos = mysqli_fetch_array($resultado);
+    $pedidos = array();
+    while ($linha = mysqli_fetch_array($resultado)) {
+        $pedidos[] = $linha;
+    }
     return $pedidos;
- 
 }
+
 function adicionarPedido($idProd,$quant,$valFrete, $vlrProd,$obs){
     $idUser = $_SESSION["idLogado"];
     $sql = "INSERT INTO Pedido(IdUsuario,IdProduto,Quantidade,Dtpedido, Dtentrega, Frete, VlrTotal, Observacao) 

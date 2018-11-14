@@ -17,6 +17,13 @@ function pegarProdutoPorId($id) {
     return $produto;
 }
 
+function pegarNomeProdutoPorId($id) {
+    $sql = "SELECT NomeProduto FROM produto WHERE IdProduto = '$id'";
+    $resultado = mysqli_query(conn(), $sql);
+    $produto = mysqli_fetch_array($resultado);
+    return $produto;
+}
+
 function pegar10Produtos() {
     $sql = "SELECT * FROM produto WHERE IdProduto <= 10";
     $resultado = mysqli_query(conn(), $sql);
