@@ -10,7 +10,7 @@ function index(){
 function adicionar() {
     if (ehPost()) {
         extract($_POST);
-        alert(adicionarProduto($nome, $descricao, $unidades, $preco, $imagem));
+        alert(adicionarProduto($nome, $descricao, $categoria, $unidades, $preco, $imagem));
         redirecionar("produto/index");
     } else {
         exibir("produto/formulario");

@@ -12,4 +12,5 @@
 	<br><br>
 	<a href="./usuario/editar/<?=$usuario['IdUsuario']?>">Editar</a>
 	<a href="./usuario/deletar/<?=$usuario['IdUsuario']?>">Deletar</a>
+	<a href="./usuario" class="btn btn-primary">Voltar</a>
 </center>

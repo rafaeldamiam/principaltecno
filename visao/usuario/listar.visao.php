@@ -26,4 +26,5 @@
 
     <br>
     <a href="./usuario/adicionar" class="btn btn-primary">Adicionar novo usuario</a>
-    <center>
+    <a href="./admin" class="btn btn-primary">Voltar</a>
+</center>

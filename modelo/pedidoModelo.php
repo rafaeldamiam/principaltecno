@@ -25,3 +25,7 @@ VALUES ('$idUser','$idProd','$quant',NOW(),NOW()+INTERVAL 15 DAY,'$valFrete','$v
     if(!$resultado) { die('Erro ao cadastrar produto' . mysqli_error($cnx)); }
     return 'Produto cadastrado com sucesso!';
 }
+
+function pegarPedidosPorInterDatas(){
+    
+}
