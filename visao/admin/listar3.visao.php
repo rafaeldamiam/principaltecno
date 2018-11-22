@@ -6,13 +6,15 @@
         <thead>
             <tr>
                 <th>Nome</th>
-                <th>Quantidade</th>
+                <th>Data do Pedido</th>
+                <th>Data de Entrega</th>
             </tr>
         </thead>
-        <?php foreach ($produtos as $produto): ?>
+        <?php foreach ($pedidos as $pedido): ?>
             <tr>
-                <td><?=$produto['NomeProduto']?></td>
-                <td><?=$produto['Unidades']?></td>
+                <td><?=$pedido['IdPedido']?></td>
+                <td><?=$pedido['Dtpedido']?></td>
+                <td><?=$pedido['Dtentrega']?></td>
             </tr>
         <?php endforeach; ?>
     </table>

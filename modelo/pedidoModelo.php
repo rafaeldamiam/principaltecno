@@ -30,5 +30,22 @@ VALUES ('$idUser','$idProd','$quant',NOW(),NOW()+INTERVAL 15 DAY,'$valFrete','$v
 }
 
 function pegarPedidosPorInterDatas(){
-    
+    $sql = "SELECT * FROM Pedido WHERE 
+    DtPedido >= NOW()-INTERVAL 30 DAY";
+    $resultado = mysqli_query(conn(), $sql);
+    $pedidos = array();
+    while ($linha = mysqli_fetch_array($resultado)) {
+        $pedidos[] = $linha;
+    }
+    return $pedidos;
 }
+
+function FaturamentoPorPeriodo(){
+    $sql = "SELECT SUM(VlrTotal) FROM Pedido";
+    $resultado = mysqli_query(conn(), $sql);
+    $pedido = mysqli_fetch_array($resultado);
+    return $pedido;
+
+}
+
+
