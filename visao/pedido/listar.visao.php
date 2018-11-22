@@ -22,7 +22,5 @@
                 </tr>
             <?php endforeach; ?>
     </table>   
-<br><br>
-<a href="./carrinho/excluirTudo">Limpar Carrinho</a>
-<a href="./">Comprar</a>    
+<br><br>    
 </center>

@@ -1,0 +1,18 @@
+<h2>Cupom</h2>
+<br><br>
+<center>
+    <table border="1">
+        <tr>
+            <td>Nome do Cupom</td>
+            <td>Desconto</td>
+        </tr>
+        <?php foreach ($cupons as $cupom): ?>
+            <tr>
+                <td><?=$cupom['NomeCupom']?></td>
+                <td><?=$cupom['Desconto']?></td>
+            </tr>
+        <?php endforeach; ?>
+    </table>  
+    <br>
+    <a href="./cupom/adicionar" class="btn btn-primary">Adicionar novo Cupom</a>
+</center>

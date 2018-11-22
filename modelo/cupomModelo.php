@@ -1,37 +1,13 @@
 <?php
 
-function pegarTodosProdutos(){
-    $sql = "SELECT * FROM produto";
+function pegarTodosCupons(){
+    $sql = "SELECT * FROM Cupom";
     $resultado = mysqli_query(conn(), $sql);
-    $produtos = array();
+    $cupons = array();
     while ($linha = mysqli_fetch_array($resultado)) {
-        $produtos[] = $linha;
+        $cupons[] = $linha;
     }
-    return $produtos;
-}
-
-function pegarProdutoPorId($id) {
-    $sql = "SELECT * FROM produto WHERE IdProduto = '$id'";
-    $resultado = mysqli_query(conn(), $sql);
-    $produto = mysqli_fetch_array($resultado);
-    return $produto;
-}
-
-function pegarNomeProdutoPorId($id) {
-    $sql = "SELECT NomeProduto FROM produto WHERE IdProduto = '$id'";
-    $resultado = mysqli_query(conn(), $sql);
-    $produto = mysqli_fetch_array($resultado);
-    return $produto;
-}
-
-function pegar10Produtos() {
-    $sql = "SELECT * FROM produto WHERE IdProduto <= 10";
-    $resultado = mysqli_query(conn(), $sql);
-    $produtos = array();
-    while ($linha = mysqli_fetch_array($resultado)) {
-        $produtos[] = $linha;
-    }
-    return $produtos;
+    return $cupons;
 }
 
 function adicionarProduto($nome, $descricao, $categoria, $unidades, $preco, $imagem ) {
@@ -56,6 +32,7 @@ function deletarProduto($id) {
     return 'Produto deletado com sucesso!';
 
 }
+
 function pegarProdutoPorNome($pesquisar){
     $sql = "SELECT * FROM produto WHERE NomeProduto LIKE '%$pesquisar%'";
     $resultado = mysqli_query(conn(), $sql);
@@ -68,33 +45,6 @@ function pegarProdutoPorNome($pesquisar){
     }else{
         return false;
     }
-}
-
-function pegarQuantProdutoPorId($id){
-    $sql = "SELECT Unidades FROM produto WHERE IdProduto = '$id'";
-    $resultado = mysqli_query(conn(), $sql);
-    $produto = mysqli_fetch_array($resultado);
-    return $produto;
-}
-
-function pegarQuantDosProdutos(){
-    $sql = "SELECT Unidades, NomeProduto FROM produto";
-    $resultado = mysqli_query(conn(), $sql);
-    $produtos = array();
-    while ($linha = mysqli_fetch_array($resultado)) {
-        $produtos[] = $linha;
-    }
-    return $produtos;
-}
-
-function pegarProdPorCategoria(){
-    $sql = "SELECT Nome, Preco FROM produto WHERE Categoria = 'celular'";
-    $resultado = mysqli_query(conn(), $sql);
-    $produtos = array();
-    while ($linha = mysqli_fetch_array($resultado)) {
-        $produtos[] = $linha;
-    }
-    return $produtos;
 }
 
 ?>

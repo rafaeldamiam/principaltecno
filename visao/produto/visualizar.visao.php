@@ -13,5 +13,4 @@
 
 	<a href="./carrinho/adicionar/<?=$produto['IdProduto']?>">Adicionar ao Carrinho</a>
 
-	<a href="./">Voltar</a>
 </center>

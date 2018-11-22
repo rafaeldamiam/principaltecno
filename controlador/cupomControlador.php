@@ -1,9 +1,9 @@
 <?php
-require 'modelo/produtoModelo.php';
+require 'modelo/cupom   Modelo.php';
 /** anon */
 function index(){
-	$dados["produtos"] = pegarTodosProdutos();
-	exibir("produto/listar", $dados);	
+	$dados["cupons"] = pegarTodosCupons();
+	exibir("cupom/listar", $dados);	
 }
 
 /** Admin */
@@ -11,16 +11,16 @@ function adicionar() {
     if (ehPost()) {
         extract($_POST);
         alert(adicionarProduto($nome, $descricao, $categoria, $unidades, $preco, $imagem));
-        redirecionar("produto/index");
+        redirecionar("cupom/index");
     } else {
-        exibir("produto/formulario");
+        exibir("cupom/formulario");
     }
 }
 
 /** Admin */
 function deletar($id) {
     alert(deletarProduto($id));
-    redirecionar("produto/index");
+    redirecionar("cupom/index");
 }
 
 /** Admin */

@@ -28,5 +28,5 @@
         <a>Valor Total: <?=$soma?></a>
     <br><br><br>   
 <a href="./carrinho/excluirTudo">Limpar Carrinho</a>
-<a href="./">Comprar</a>	
+<a href="./compra/">Comprar</a>	
 </center>
