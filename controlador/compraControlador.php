@@ -15,7 +15,7 @@ function index() {
         }
         $dados["quant"] = $produtosCarrinhoQuant;
 
-        exibir("compra/formulario	", $dados);
+        exibir("compra/formulario", $dados);
 
 }
 

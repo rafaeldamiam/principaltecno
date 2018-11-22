@@ -31,7 +31,7 @@ function editar($id) {
         $unidades = $_POST["unidades"];
         $preco = $_POST["preco"];
         $imagem = $_POST["imagem"];
-        alert(editarProduto($id, $nome, $descricao, $unidades, $preco, $imagem));
+        alert(editarProduto($id,$nome, $descricao, $categoria, $unidades, $preco, $imagem));
         redirecionar("produto/index");
     } else {
         $dados['produto'] = pegarProdutoPorId($id);
