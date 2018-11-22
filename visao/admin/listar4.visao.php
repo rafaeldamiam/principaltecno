@@ -9,7 +9,7 @@
             </tr>
         </thead>
             <tr>
-                <td><?=$pedido['VlrTotal']?></td>
+                <td><?=$pedidos['VlrTotal']?></td>
             </tr>
     
     </table>

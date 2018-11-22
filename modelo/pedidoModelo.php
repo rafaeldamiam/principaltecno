@@ -41,11 +41,10 @@ function pegarPedidosPorInterDatas(){
 }
 
 function FaturamentoPorPeriodo(){
-    $sql = "SELECT SUM(VlrTotal) FROM Pedido";
+    $sql = "SELECT SUM(VlrTotal) FROM Pedido WHERE DtPedido >= NOW()-INTERVAL 30 DAY";
     $resultado = mysqli_query(conn(), $sql);
-    $pedido = mysqli_fetch_array($resultado);
-    return $pedido;
-
+    $pedidos = mysqli_fetch_array($resultado);
+    return $pedidos;
 }
 
 

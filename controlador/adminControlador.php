@@ -21,7 +21,7 @@ function pedidosInterDatas(){
 }
 
 function fatuPorPeriodo(){
-	$dados["pedido"] = FaturamentoPorPeriodo();
+	$dados["pedidos"] = FaturamentoPorPeriodo();
 	exibir("admin/listar4", $dados);
 }
 ?>

@@ -1,5 +1,5 @@
 <h2>Relatórios</h2>
-<h3>Quantidade de produtos no estoque</h3>
+<h3>Pedidos Mensais</h3>
 <br><br>
 <center>
     <table class="table">
