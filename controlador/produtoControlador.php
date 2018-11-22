@@ -28,6 +28,7 @@ function editar($id) {
     if (ehPost()) {
         $nome = $_POST["nome"];
         $descricao = $_POST["descricao"];
+        $categoria = $_POST["categoria"];
         $unidades = $_POST["unidades"];
         $preco = $_POST["preco"];
         $imagem = $_POST["imagem"];
