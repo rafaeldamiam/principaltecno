@@ -10,31 +10,23 @@ function pegarTodosCupons(){
     return $cupons;
 }
 
-function adicionarProduto($nome, $descricao, $categoria, $unidades, $preco, $imagem ) {
-    $sql = "INSERT INTO produto (NomeProduto, Descricao, Categoria, Unidades, Preco, Imagem) 
-    VALUES ('$nome', '$descricao', '$categoria', '$unidades', '$preco', '$imagem')";
+function adicionarCupom($nomecupom, $desconto) {
+    $sql = "INSERT INTO Cupom(NomeCupom, Desconto) VALUES ('$nomecupom', '$desconto');";
     $resultado = mysqli_query($cnx = conn(), $sql);
-    if(!$resultado) { die('Erro ao cadastrar produto' . mysqli_error($cnx)); }
-    return 'Produto cadastrado com sucesso!';
+    if(!$resultado) { die('Erro ao cadastrar cupom' . mysqli_error($cnx)); }
+    return 'Cupom cadastrado com sucesso!';
 }
 
-function editarProduto($id, $nome, $descricao, $categoria, $unidades, $preco, $imagem) {
-    $sql = "UPDATE produto SET NomeProduto = '$nome', Descricao = '$descricao', Categoria = '$categoria', Unidades = '$unidades', Preco = '$preco', Imagem = '$imagem'  WHERE IdProduto = $id";
+function deletarCupom($id) {
+    $sql = "DELETE FROM Cupom WHERE IdCupom = $id";
     $resultado = mysqli_query($cnx = conn(), $sql);
-    if(!$resultado) { die('Erro ao alterar produto' . mysqli_error($cnx)); }
-    return 'Produto alterado com sucesso!';
-}
-
-function deletarProduto($id) {
-    $sql = "DELETE FROM produto WHERE IdProduto = $id";
-    $resultado = mysqli_query($cnx = conn(), $sql);
-    if(!$resultado) { die('Erro ao deletar produto' . mysqli_error($cnx)); }
-    return 'Produto deletado com sucesso!';
+    if(!$resultado) { die('Erro ao deletar Cupom!' . mysqli_error($cnx)); }
+    return 'Cupom deletado com sucesso!';
 
 }
 
-function pegarProdutoPorNome($pesquisar){
-    $sql = "SELECT * FROM produto WHERE NomeProduto LIKE '%$pesquisar%'";
+function pegarCupomPorNome($cupom){
+    $sql = "SELECT * FROM cupom WHERE NomeCupom = '$cupom'";
     $resultado = mysqli_query(conn(), $sql);
     if ($resultado) {
         $produtos = array();

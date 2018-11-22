@@ -1,5 +1,5 @@
 <?php
-require 'modelo/cupom   Modelo.php';
+require 'modelo/cupomModelo.php';
 /** anon */
 function index(){
 	$dados["cupons"] = pegarTodosCupons();
@@ -10,8 +10,10 @@ function index(){
 function adicionar() {
     if (ehPost()) {
         extract($_POST);
-        alert(adicionarProduto($nome, $descricao, $categoria, $unidades, $preco, $imagem));
-        redirecionar("cupom/index");
+        $nomecupom = $_POST["nomecupom"];
+        $desconto = $_POST["desconto"];
+        alert(adicionarCupom($nomecupom, $desconto));
+        redirecionar("cupom/");
     } else {
         exibir("cupom/formulario");
     }
@@ -19,7 +21,7 @@ function adicionar() {
 
 /** Admin */
 function deletar($id) {
-    alert(deletarProduto($id));
+    alert(deletarCupom($id));
     redirecionar("cupom/index");
 }
 
