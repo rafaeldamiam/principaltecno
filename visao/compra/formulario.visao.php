@@ -11,11 +11,17 @@
 	            <?php foreach ($produtos as $produto): ?>
 	                <tr>
 	                    <td><a href="./produto/visualizar/<?=$produto['IdProduto']?>" class="btn btn-secondary"><?= $produto["NomeProduto"] ?></a></td>
-	                    <td></td>
+	                    <td><?= $produto["NomeProduto"] ?></td>
 	                    <td></td>
 	                </tr>
 	            <?php endforeach; ?>
-	    </table>   
+	    </table>
+<br><br><br><br>
+
+<a href="./cupom/confereCupom" class="btn btn-secondary">Possui Cupom?? Clique aqui para usar seu cupom</a>
+
+
+
 <br><br><br>
 <button id="botao" type="submit">Enviar</button>
 </form>

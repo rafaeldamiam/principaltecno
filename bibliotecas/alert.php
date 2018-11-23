@@ -24,7 +24,7 @@ function alertClear() {
 
 function alertComponentRender() {
     if (!empty($_SESSION["alert"])) {
-
+        
         $msgs = implode(',', $_SESSION["alert"]);
         $alertLevel = $_SESSION["alertLevel"];
 

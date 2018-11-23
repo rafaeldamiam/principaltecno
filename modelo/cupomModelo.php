@@ -25,18 +25,13 @@ function deletarCupom($id) {
 
 }
 
-function pegarCupomPorNome($cupom){
-    $sql = "SELECT * FROM cupom WHERE NomeCupom = '$cupom'";
+function pegarCupomPorNome($nomeCupom){
+    $sql = "SELECT Desconto FROM Cupom WHERE NomeCupom = '$nomeCupom'";
     $resultado = mysqli_query(conn(), $sql);
-    if ($resultado) {
-        $produtos = array();
-        while ($linha = mysqli_fetch_array($resultado)) {
-            $produtos[] = $linha;
-        }
-        return $produtos;
-    }else{
-        return false;
+    $cupons = array();
+     while ($linha = mysqli_fetch_array($resultado)) {
+        $cupons[] = $linha;
     }
+    return $cupons;
 }
-
 ?>

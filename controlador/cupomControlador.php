@@ -25,27 +25,18 @@ function deletar($id) {
     redirecionar("cupom/index");
 }
 
-/** Admin */
-function editar($id) {
+/** anon */ 
+function confereCupom() {
     if (ehPost()) {
-        $nome = $_POST["nome"];
-        $descricao = $_POST["descricao"];
-        $unidades = $_POST["unidades"];
-        $preco = $_POST["preco"];
-        $imagem = $_POST["imagem"];
-        alert(editarProduto($id, $nome, $descricao, $unidades, $preco, $imagem));
-        redirecionar("produto/index");
+        extract($_POST);
+        $nomecupom = $_POST["nomeCupom"];
+        $dados["cupom"] = pegarCupomPorNome($nomecupom);
+        redirecionar("compra/", $dados);
     } else {
-        $dados['produto'] = pegarProdutoPorId($id);
-        $dados['acao'] = "./produto/editar/$id";
-        exibir("produto/formulario", $dados);
+        exibir("cupom/confereCupom");
     }
+    
 }
 
-/** anon */ 
-function visualizar($id) {
-    $dados['produto'] = pegarProdutoPorId($id);
-    exibir("produto/visualizar", $dados);
-}
 
 ?>

@@ -4,7 +4,7 @@
 	<input type="text" id="caixaTexto" name="nomecupom">
 
 	<label>Desconto:</label>
-	<input type="text" id="caixaTexto" name="desconto" value="<?=@$cupom['desconto']?>">
+	<input type="text" id="caixaTexto" name="desconto" ">
 
 <br><br><br>
 <button id="botao" type="submit">Enviar</button>
