@@ -19,6 +19,14 @@ function index() {
 
 }
 
+function metodoPagamento(){
+    if (ehPost()) {
+        extract($_POST);
+        $pagamento = $_POST["pagamento"];
+        $dados["compra"] = 
+    }
+}
+
 
 
 ?>
