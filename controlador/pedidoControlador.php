@@ -7,10 +7,10 @@ function index($id) {
 	$dados["pedidos"] = pegarPedidosPorId($id);
 	
 	if(!empty($dados["pedidos"])){
-    	exibir("pedido/listar", $dados);
+		exibir("pedido/listar", $dados);
 	}else{
-    	exibir("pedido/vazio");
-    }
+		exibir("pedido/vazio");
+	}
 }
 
 function buscarProd($id){
@@ -18,6 +18,20 @@ function buscarProd($id){
 	return $busca["NomeProduto"];
 }
 
-function salvaPedido($id,$quanti){
-    
+function finalizar(){
+	$idProd = array();
+	$quant = array();
+	$valFrete = 5;
+	$vlrProd = $_SESSION["valorTotal"] - $_SESSION["cupom"]["desconto"];
+	$obs = "algo";
+	for ($i=0; $i < count($_SESSION["carrinho"]); $i++) { 
+		$idProd = $_SESSION["carrinho"][$i]["id"];
+		$quant = $_SESSION["carrinho"][$i]["quantidade"];
+	}
+
+	$pedido = adicionarPedido($idProd,$quant,$valFrete, $vlrProd,$obs);
+	unset($_SESSION["carrinho"]);
+	unset($_SESSION["valorTotal"]);
+	unset($_SESSION["metodo"]);
+	redirecionar("./home/");
 }

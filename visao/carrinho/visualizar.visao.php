@@ -17,7 +17,7 @@
                     <td><?= $quanti=$quant[$i++] ?></td>
                     <td><?=calPreco($preco,$quanti)?></td>
                     <?php
-                    $_SESSION["valorTotal"]= $soma+calPreco($preco,$quanti);                    
+                    $soma= $soma+calPreco($preco,$quanti);                    
                     ?>
                     <td><a href="./carrinho/sumOne/<?= $produto['IdProduto'] ?>">+  </a><a href="./carrinho/minOne/<?= $produto['IdProduto'] ?>">   -</a></td>
                     <td><a href="./carrinho/excluir/<?= $produto['IdProduto'] ?>">Excluir</a></td>
@@ -25,8 +25,11 @@
             <?php endforeach; ?>
     </table>
     <br><br> 
-        <a>Valor Total: <?=$_SESSION["valorTotal"]?></a>
+        <a>Valor Total: <?=$soma?></a>
     <br><br><br>   
+    <?php
+        $_SESSION["valorTotal"] = $soma;
+    ?>
 <a href="./carrinho/excluirTudo">Limpar Carrinho</a>
 <a href="./compra/">Comprar</a>	
 </center>

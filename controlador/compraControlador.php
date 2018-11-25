@@ -22,11 +22,10 @@ function index() {
 function metodoPagamento(){
     if (ehPost()) {
         extract($_POST);
-        $pagamento = $_POST["pagamento"];
-        $dados["compra"] = 
+        $_SESSION["metodo"] = $_POST["pagamento"]; 
+    }else{
+        redirecionar("compra/");
     }
 }
-
-
 
 ?>

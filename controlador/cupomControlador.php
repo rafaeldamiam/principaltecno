@@ -30,8 +30,8 @@ function confereCupom() {
     if (ehPost()) {
         extract($_POST);
         $nomecupom = $_POST["nomeCupom"];
-        $dados["cupom"] = pegarCupomPorNome($nomecupom);
-        redirecionar("compra/", $dados);
+        $_SESSION["cupom"] = pegarCupomPorNome($nomecupom);
+        redirecionar("compra/", $_SESSION['cupom']);
     } else {
         exibir("cupom/confereCupom");
     }
