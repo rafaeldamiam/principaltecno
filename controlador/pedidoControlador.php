@@ -22,7 +22,7 @@ function finalizar(){
 	$idProd = array();
 	$quant = array();
 	$valFrete = 5;
-	$vlrProd = $_SESSION["valorTotal"] - $_SESSION["cupom"]["desconto"];
+	$vlrProd = $_SESSION["valorTotal"];
 	$obs = "algo";
 	for ($i=0; $i < count($_SESSION["carrinho"]); $i++) { 
 		$idProd = $_SESSION["carrinho"][$i]["id"];
@@ -31,7 +31,9 @@ function finalizar(){
 
 	$pedido = adicionarPedido($idProd,$quant,$valFrete, $vlrProd,$obs);
 	unset($_SESSION["carrinho"]);
-	unset($_SESSION["valorTotal"]);
+	unset($_SESSION["cupom"]);
+        unset($_SESSION["valorTotal"]);
 	unset($_SESSION["metodo"]);
-	redirecionar("./home/");
+        unset($_SESSION['segurança']);
+        redirecionar("./home/");
 }

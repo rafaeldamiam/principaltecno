@@ -28,4 +28,20 @@ function metodoPagamento(){
     }
 }
 
+function fazendoDesconto(){
+      $desconto = $_SESSION['cupom'][0]["Desconto"];
+      $vlrdesconto = ($desconto*$_SESSION['valorTotal'])/100;    
+      $valordeCompra = $_SESSION['valorTotal']-$vlrdesconto;
+      $_SESSION['segurança'] = 1;
+      return $valordeCompra;
+
+}
+
+function cancelarCompra(){
+	unset($_SESSION["cupom"]);
+        unset($_SESSION["valorTotal"]);
+	unset($_SESSION["metodo"]);
+        redirecionar("./home/");
+}
+
 ?>

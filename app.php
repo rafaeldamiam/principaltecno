@@ -11,4 +11,4 @@ require_once 'bibliotecas/alert.php';
 require_once 'bibliotecas/auth.php';
 
 define('CONTROLADOR_PADRAO', 'home');
-define('BASE_URL', 'http://localhost/principaltecno/');
+define('BASE_URL', 'http://principaltecno.onlinewebshop.net/');

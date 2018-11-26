@@ -7,7 +7,7 @@ require_once 'app.php'; //arquivo geral da aplicacao
 
 $uri = explode("/", $_SERVER["REQUEST_URI"]); //explore a URL
 
-$controllerName = $uri[2]; //coloca como padrao: nomeProjeto/controlador/acao/parametros
+$controllerName = $uri[1]; //coloca como padrao: nomeProjeto/controlador/acao/parametros
 
 if(!$controllerName && CONTROLADOR_PADRAO) {
     $controllerName = CONTROLADOR_PADRAO;
@@ -23,8 +23,8 @@ if (!file_exists($controllerFileName))
 
 require_once $controllerFileName;
 
-$action = (isset($uri[3]) and ! empty($uri[3])) ?  $action = $uri[3] : 'index'; //pega a acao
-$params = (count($uri) > 4) ? array_slice($uri, 4) : array(); //pega os parametros, se existir
+$action = (isset($uri[2]) and ! empty($uri[2])) ?  $action = $uri[2] : 'index'; //pega a acao
+$params = (count($uri) > 3) ? array_slice($uri, 3) : array(); //pega os parametros, se existir
 
 try {
     if(is_callable($action)){ //a funcao existe?

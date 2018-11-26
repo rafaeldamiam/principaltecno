@@ -11,10 +11,21 @@
 			</tr>
 		<?php endforeach; ?>
 	</table>
-	<br>
+        <br>
 	<h3>Valor Total da Compra: <?=$_SESSION["valorTotal"]?></h3>
-
-	<a href="./cupom/confereCupom" class="btn btn-secondary">Possui Cupom?? Clique aqui para usar seu cupom</a>
+        <?php 
+                $_SESSION["valorTotal"] = fazendoDesconto();
+		if (!empty($_SESSION["cupom"])) {
+	?>
+                <h3>Valor Total da Compra Com Desconto: <?=$_SESSION["valorTotal"]?></h3>
+        <?php
+		}else{
+	?>
+                <a href="./cupom/confereCupom" class="btn btn-secondary">Possui Cupom?? Clique aqui para usar seu cupom</a>
+        <?php
+		}
+	?>
+        <br>
 
 	<?php 
 		if (empty($_SESSION["metodo"])) {
@@ -29,12 +40,11 @@
 				<label for="pagamento">Boleto Bancário</label><br>
 				<input type="radio" name="pagamento" value="PrincipalTecno">
 				<label for="pagamento">Cartão Principal Tecno</label><br><br>
-
-				<button id="botao" type="submit">Enviar</button>
 			</form>
 	<?php
 		}
 	?>
 		<br><br>
 		<a href="pedido/finalizar">Finalizar Compra</a>
+                <a href="compra/cancelarCompra">Cancelar Compra</a>
 	</center>
